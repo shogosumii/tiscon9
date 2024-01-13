@@ -3,6 +3,7 @@ package com.tiscon.form;
 import com.tiscon.validator.Numeric;
 
 import javax.validation.constraints.Email;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -54,6 +55,17 @@ public class UserOrderForm {
 
     @NotNull
     private boolean washingMachineInstallation;
+
+    @Numeric
+    private String month;
+
+    public String getMonth(){
+        return month;
+    }
+
+    public void setMonth(String month){
+        this.month = month;
+    }
 
     public String getCustomerName() {
         return customerName;

@@ -10,6 +10,8 @@ public class PackageBox implements Serializable {
 
     private int box;
 
+    private int month;
+
     public int getPackageId() {
         return packageId;
     }
@@ -33,4 +35,6 @@ public class PackageBox implements Serializable {
     public void setBox(int box) {
         this.box = box;
     }
+
+    
 }

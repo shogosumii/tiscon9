@@ -76,6 +76,9 @@ public class EstimateService {
 
         // 距離当たりの料金を算出する
         int priceForDistance = distanceInt * PRICE_PER_DISTANCE;
+        
+        //get month
+        int month = Integer.parseInt(dto.getMonth());
 
         int boxes = getBoxForPackage(dto.getBox(), PackageType.BOX)
                 + getBoxForPackage(dto.getBed(), PackageType.BED)
@@ -92,7 +95,7 @@ public class EstimateService {
             priceForOptionalService = estimateDAO.getPricePerOptionalService(OptionalServiceType.WASHING_MACHINE.getCode());
         }
 
-        return priceForDistance + pricePerTruck + priceForOptionalService;
+        return (priceForDistance + pricePerTruck) * month + priceForOptionalService;
     }
 
     /**
