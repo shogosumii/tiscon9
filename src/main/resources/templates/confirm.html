@@ -54,22 +54,7 @@
       </tbody>
       </table>
     </div>
-    <div class="col-sm-12">
-      <div class="sub-title">引っ越し予定月</div>
-      <table class="table table-bordered">
-        <col span="1" style="background-color: #FFFFFF;">
-        <col span="2" style="background-color: #FFFFFF;">
-        <tbody>
-        <tr>
-          <th style="width: 40%">集荷予定月</th>
-          <td>
-            <span th:text="*{month}" />
-          </td>
-          <input type="hidden" name="month" id="month" th:value="*{month}"/>
-        </tr>
-      </tbody>
-      </table>
-    </div>
+    
     <div class="col-sm-12">
       <div class="sub-title">集荷元・お届け先</div>
       <table class="table table-bordered">
@@ -101,6 +86,22 @@
           <input type="hidden" name="newAddress" id="newAddress" th:value="*{newAddress}"/>
         </tr>
         </tbody>
+      </table>
+    </div>
+    <div class="col-sm-12">
+      <div class="sub-title">引っ越し予定月</div>
+      <table class="table table-bordered">
+        <col span="1" style="background-color: #FFFFFF;">
+        <col span="2" style="background-color: #FFFFFF;">
+        <tbody>
+        <tr>
+          <th style="width: 40%">集荷予定月</th>
+          <td>
+            <span th:text="*{month}" />
+          </td>
+          <input type="hidden" name="month" id="month" th:value="*{month}"/>
+        </tr>
+      </tbody>
       </table>
     </div>
     <div class="col-sm-12">
