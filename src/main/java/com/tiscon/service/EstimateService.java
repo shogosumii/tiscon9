@@ -80,6 +80,9 @@ public class EstimateService {
         //get month
         int month = Integer.parseInt(dto.getMonth());
 
+        //月計数
+        double MonthPrice = 1;//初期定義
+
         int boxes = getBoxForPackage(dto.getBox(), PackageType.BOX)
                 + getBoxForPackage(dto.getBed(), PackageType.BED)
                 + getBoxForPackage(dto.getBicycle(), PackageType.BICYCLE)
@@ -95,7 +98,13 @@ public class EstimateService {
             priceForOptionalService = estimateDAO.getPricePerOptionalService(OptionalServiceType.WASHING_MACHINE.getCode());
         }
 
-        return (priceForDistance + pricePerTruck) * month + priceForOptionalService;
+        if(month == 3 || month == 4){
+            MonthPrice = 1.5;
+        }
+        else if(month == 9){
+            MonthPrice = 1.2;
+        }
+        return (int)((priceForDistance + pricePerTruck) * MonthPrice + priceForOptionalService);
     }
 
     /**
